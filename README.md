@@ -1,11 +1,11 @@
 # discourse-bump-suppress
 
-discourse-feed-sort is a plugin for ...
+discourse-bump-suppress is a plugin for ...
 
 ## Installation
 
 Follow [Install a Plugin](https://meta.discourse.org/t/install-a-plugin/19157)
-how-to from the official Discourse Meta, using `git clone https://github.com/danymajeed/discourse-feed-sort.git`
+how-to from the official Discourse Meta, using `git clone https://github.com/danymajeed/discourse-bump-suppress.git`
 as the plugin command.
 
 ## Usage

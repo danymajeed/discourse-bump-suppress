@@ -1,4 +1,4 @@
 en:
   site_settings:
     bump_suppress: "Enable Bump Suppress Plugin"
-    disable_bump_for: "Disable Bumping of Topics Created __ hours ago"
+    bump_suppress_topic_age_threshold: "Suppress Topics Bump Created __ hours ago"

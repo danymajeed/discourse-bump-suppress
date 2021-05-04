@@ -2,7 +2,7 @@ plugins:
   bump_suppress:
     default: true
     client: true
-  disable_bump_for:
+  bump_suppress_topic_age_threshold:
     default: 24
     client: true
     type: integer

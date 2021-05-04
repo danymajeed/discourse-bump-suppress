@@ -19,17 +19,11 @@ after_initialize do
     class ::PostCreator
       module SuppressTopicBump
         def update_topic_stats
-          attrs = { updated_at: Time.now }
-          if @post.post_type != Post.types[:whisper] && !@opts[:silent]
-              attrs[:last_posted_at] = @post.created_at
-              attrs[:last_post_user_id] = @post.user_id
-              attrs[:word_count] = (@topic.word_count || 0) + @post.word_count
-              attrs[:excerpt] = @post.excerpt_for_topic if new_topic?
-              if @topic.created_at.to_time > Time.now - (3600 * SiteSetting.disable_bump_for)
-                attrs[:bumped_at] = @post.created_at
-              end
+          if @post.post_type == Post.types[:regular] &&
+            @topic.created_at.to_time < Time.now - (3600 * SiteSetting.bump_suppress_topic_age_threshold)
+            @post.no_bump = true
           end
-          @topic.update_columns(attrs)
+          super
         end
       end
       prepend SuppressTopicBump
