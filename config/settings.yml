@@ -1,0 +1,9 @@
+plugins:
+  bump_suppress:
+    default: true
+    client: true
+  disable_bump_for:
+    default: 24
+    client: true
+    type: integer
+    min: 0
